@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro Negocios - Crece con Nosotros</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1 class="logo">MiNegocio+</h1>
+    </header>
+
+    <main class="content">
+      <h2>{{ titulo }}</h2>
+      <p>{{ mensaje }}</p>
+      <button @click="mostrarBeneficios = !mostrarBeneficios">
+        {{ mostrarBeneficios ? 'Ocultar beneficios' : 'Ver beneficios' }}
+      </button>
+
+      <ul v-if="mostrarBeneficios" class="benefits">
+        <li v-for="(beneficio, index) in beneficios" :key="index">
+          {{ beneficio }}
+        </li>
+      </ul>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 MiNegocio+. Impulsa tu crecimiento digital.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
